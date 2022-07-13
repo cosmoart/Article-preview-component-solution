@@ -43,11 +43,11 @@ Users should be able to:
 <table>
         <tr>
             <td>
-                <img src="./images/screenshots/desktop-solution.webp"
+                <img src="./src/images/screenshots/desktop-solution.webp"
                     alt="Desktop solution" width="100%" title="Desktop solution"/>
             </td>
             <td>
-                <img src="./images/screenshots/mobile-solution.webp"
+                <img src="./src/images/screenshots/mobile-solution.webp"
                     alt="Mobile solution" title="Mobile solution" width="100%" />
             </td>
         </tr>
