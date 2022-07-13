@@ -155,13 +155,16 @@ main {
     }
 }
 
-.active~#share::before,
-.active2~#share::before {
+.active {
+    opacity: 1;
+    bottom: 0;
+}
+
+.active~#share::before {
     opacity: 1;
 }
 
-.active~#share path,
-.active2~#share path {
+.active~#share path {
     fill: white;
 }
 
@@ -215,16 +218,11 @@ main {
         transform: translateX(-50%);
         clip-path: polygon(50% 70%, 0 0, 100% 0);
     }
-}
 
-.active {
-    opacity: 1;
-    bottom: 0;
-}
-
-.active2 {
-    opacity: 1;
-    bottom: 4.5rem;
+    .active {
+        opacity: 1;
+        bottom: 4.5rem;
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -246,7 +244,7 @@ main {
         bottom: 35px
     }
 
-    .active2 {
+    .active {
         bottom: 6rem;
         right: -57px;
     }
