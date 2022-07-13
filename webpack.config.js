@@ -1,4 +1,6 @@
-const HTMLWEBPACKPLUGIN = require("html-webpack-plugin");
+const HTMLWEBPACKPLUGIN = require("html-webpack-plugin"),
+    CopyPlugin = require("copy-webpack-plugin"),
+    path = require("path");
 
 const cssRule = {
     test: /\.s[ac]ss$/i,
@@ -18,14 +20,24 @@ const tsRule = {
     exclude: /node_modules/,
 }
 
+const assetsRules = {
+    test: /\.(png|svg|jpg|webp)$/i,
+    type: "asset/resource",
+}
+
 module.exports = {
     entry: "./src/index.ts",
     module: {
-        rules: [cssRule, tsRule],
+        rules: [cssRule, tsRule, assetsRules],
     },
     plugins: [
         new HTMLWEBPACKPLUGIN({
             template: "./src/index.html",
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "src/images", to: "images" },
+            ],
         }),
     ],
     resolve: {

@@ -1,16 +1,17 @@
 {
     "name": "article-preview-component-master",
     "version": "1.0.0",
-    "description": "<div id=\"top\"></div> <div align=\"center\">",
+    "description": "Solution to the Frontend Mentor challenge, code by Cosmo Art",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --mode production",
         "dev": "webpack --mode development --watch"
     },
-    "author": "cosmo",
+    "author": "Cosmo",
     "license": "ISC",
     "devDependencies": {
+        "copy-webpack-plugin": "^11.0.0",
         "sass": "^1.53.0",
         "sass-loader": "^13.0.2",
         "ts-loader": "^9.3.1",
