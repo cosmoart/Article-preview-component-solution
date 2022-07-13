@@ -1,0 +1,253 @@
+/* ==== VAR ============ */
+$VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+$DesaturatedDarkBlue: hsl(214, 17%, 51%);
+$GrayishBlue: hsl(212, 23%, 69%);
+$LightGrayishBlue: hsl(210, 46%, 95%);
+
+/* ==== ATTRIBUTION ==== */
+.attribution {
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+
+    :hover {
+        opacity: 1;
+    }
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+/* ==== CHALLENGE ====== */
+body {
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    color: $VeryDarkGrayishBlue;
+    background: $LightGrayishBlue;
+}
+
+h1 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+a:hover {
+    opacity: .7;
+}
+
+main {
+    box-shadow: -3px 10px 46px -9px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(10rem, 80vw, 20rem);
+    border-radius: 13px;
+    overflow: hidden;
+    background: white;
+
+    >img {
+        width: 100%;
+        height: 13rem;
+        object-fit: cover;
+        object-position: top left;
+    }
+
+    article {
+        padding: 1.5rem 1.5rem 20px 1.5rem;
+
+        >p {
+            line-height: 20px;
+            opacity: .8;
+            margin-bottom: 26px;
+        }
+    }
+
+    footer {
+        display: flex;
+        gap: 15px;
+
+        p {
+            margin: 1px;
+            opacity: .7;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        img {
+            width: 2.5rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+#share {
+    cursor: pointer;
+    position: absolute;
+    bottom: 19px;
+    right: 20px;
+    padding: 10px;
+
+    svg {
+        transform: scale(1.1);
+        position: relative;
+        z-index: 10;
+    }
+
+    &::before {
+        background: $DesaturatedDarkBlue;
+        content: "";
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        opacity: .1;
+        transition: opacity 0.3s ease-in-out;
+    }
+}
+
+#share:hover {
+    opacity: .8;
+}
+
+#share:active {
+    transform: scale(.9);
+}
+
+.shareMenu {
+    display: flex;
+    align-items: center;
+    padding: 17px 30px;
+    gap: 13px;
+    width: 100%;
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    background: $VeryDarkGrayishBlue;
+
+    p {
+        color: $LightGrayishBlue;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 12px;
+        opacity: .6;
+    }
+
+    img {
+        object-fit: contain;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+}
+
+.active~#share::before,
+.active2~#share::before {
+    opacity: 1;
+}
+
+.active~#share path,
+.active2~#share path {
+    fill: white;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    main {
+        width: clamp(20rem, 80vw, 45rem);
+        height: 18rem;
+        display: flex;
+        overflow: visible;
+
+        >img {
+            width: 40%;
+            height: 100%;
+            border-radius: 13px 0 0 13px;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 1.5rem;
+        }
+    }
+
+    .shareMenu {
+        right: -70px;
+        left: auto;
+        width: fit-content;
+        padding: 11px 30px;
+        border-radius: 10px;
+        bottom: 0;
+
+        p {
+            margin: 5px 0;
+            font-size: 11px;
+        }
+    }
+
+    .shareMenu::after {
+        content: "";
+        width: 30px;
+        height: 20px;
+        background: $VeryDarkGrayishBlue;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: polygon(50% 70%, 0 0, 100% 0);
+    }
+}
+
+.active {
+    opacity: 1;
+    bottom: 0;
+}
+
+.active2 {
+    opacity: 1;
+    bottom: 4.5rem;
+}
+
+@media screen and (min-width: 1400px) {
+    h1 {
+        line-height: 30px;
+        margin: 0 10px 0 0;
+    }
+
+    main article {
+        padding: 2rem;
+    }
+
+    main article>p {
+        margin: 0 20px 0 0;
+    }
+
+    #share {
+        right: 35px;
+        bottom: 35px
+    }
+
+    .active2 {
+        bottom: 6rem;
+        right: -57px;
+    }
+}
